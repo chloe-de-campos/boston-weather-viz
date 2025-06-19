@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston Weather Visualization - June 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌡️ Boston Weather Analysis</h1>
+            <h2>June 19-25, 2025 • Heat Wave Week</h2>
+            <div class="heat-advisory">
+                🚨 Heat Advisory in Effect - Temperatures up to 92°F
+            </div>
+        </header>
+
+        <div class="current-conditions">
+            <div class="current-temp">
+                <span class="temp">88°F</span>
+                <span class="condition">Hot, Humid & Stormy</span>
+            </div>
+            <div class="current-stats">
+                <div class="stat">
+                    <span class="label">Humidity</span>
+                    <span class="value">78%</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Wind</span>
+                    <span class="value">12 mph</span>
+                </div>
+                <div class="stat">
+                    <span class="label">UV Index</span>
+                    <span class="value">8</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="forecast-cards">
+            <div class="day-card today">
+                <div class="day">Wed (Today)</div>
+                <div class="date">Jun 19</div>
+                <div class="icon">⛈️</div>
+                <div class="temps">
+                    <span class="high">88°</span>
+                    <span class="low">70°</span>
+                </div>
+                <div class="details">
+                    <span>🌧️ 40%</span>
+                    <span>💧 78%</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day">Thu</div>
+                <div class="date">Jun 20</div>
+                <div class="icon">⛈️</div>
+                <div class="temps">
+                    <span class="high">92°</span>
+                    <span class="low">73°</span>
+                </div>
+                <div class="details">
+                    <span>🌧️ 60%</span>
+                    <span>💧 82%</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day">Fri</div>
+                <div class="date">Jun 21</div>
+                <div class="icon">⛅</div>
+                <div class="temps">
+                    <span class="high">85°</span>
+                    <span class="low">68°</span>
+                </div>
+                <div class="details">
+                    <span>🌧️ 30%</span>
+                    <span>💧 65%</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day">Sat</div>
+                <div class="date">Jun 22</div>
+                <div class="icon">☀️</div>
+                <div class="temps">
+                    <span class="high">79°</span>
+                    <span class="low">66°</span>
+                </div>
+                <div class="details">
+                    <span>🌧️ 20%</span>
+                    <span>💧 60%</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day">Sun</div>
+                <div class="date">Jun 23</div>
+                <div class="icon">☀️</div>
+                <div class="temps">
+                    <span class="high">82°</span>
+                    <span class="low">65°</span>
+                </div>
+                <div class="details">
+                    <span>🌧️ 10%</span>
+                    <span>💧 58%</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day">Mon</div>
+                <div class="date">Jun 24</div>
+                <div class="icon">⛅</div>
+                <div class="temps">
+                    <span class="high">84°</span>
+                    <span class="low">67°</span>
+                </div>
+                <div class="details">
+                    <span>🌧️ 20%</span>
+                    <span>💧 63%</span>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day">Tue</div>
+                <div class="date">Jun 25</div>
+                <div class="icon">☁️</div>
+                <div class="temps">
+                    <span class="high">87°</span>
+                    <span class="low">69°</span>
+                </div>
+                <div class="details">
+                    <span>🌧️ 35%</span>
+                    <span>💧 70%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>📊 Comprehensive Weather Analysis</h3>
+            <p>Temperature, Humidity, Wind & Precipitation - Multi-Variable View</p>
+            <canvas id="weatherChart"></canvas>
+        </div>
+
+        <div class="mini-charts">
+            <div class="mini-chart">
+                <h4>📊 Pressure Trend</h4>
+                <canvas id="pressureChart"></canvas>
+            </div>
+            <div class="mini-chart">
+                <h4>☀️ UV Index</h4>
+                <canvas id="uvChart"></canvas>
+            </div>
+            <div class="mini-chart">
+                <h4>👁️ Visibility</h4>
+                <canvas id="visibilityChart"></canvas>
+            </div>
+        </div>
+
+        <footer>
+            <div class="assignment-info">
+                <h3>Assignment Documentation</h3>
+                <div class="doc-section">
+                    <h4>🤖 AI Tool Used:</h4>
+                    <p>Claude AI (Sonnet 4) for data gathering, analysis, and visualization creation</p>
+                </div>
+                <div class="doc-section">
+                    <h4>🔍 Prompts Used:</h4>
+                    <ul>
+                        <li>"Search for Boston weather June 19 2025 forecast this week"</li>
+                        <li>"Create a comprehensive weather visualization with multiple variables"</li>
+                        <li>"Make it professional for class submission and deploy to GitHub Pages"</li>
+                    </ul>
+                </div>
+                <div class="doc-section">
+                    <h4>🛠️ Process:</h4>
+                    <ol>
+                        <li>Gathered real-time weather data via web search</li>
+                        <li>AI analyzed and structured data for visualization</li>
+                        <li>Created interactive charts with Chart.js</li>
+                        <li>Applied modern design with CSS gradients and animations</li>
+                        <li>Deployed to GitHub Pages for public access</li>
+                    </ol>
+                </div>
+                <div class="doc-section">
+                    <h4>🎯 Will AI Take Over?</h4>
+                    <p><strong>My Reflection:</strong> AI is becoming an incredibly powerful creative partner rather than a replacement. This project demonstrates the synergy - I provided vision and requirements while AI handled technical execution, data processing, and design implementation. The future is human-AI collaboration where we amplify each other's strengths.</p>
+                </div>
+            </div>
+            <div class="data-source">
+                <p>Data: National Weather Service • Boston Logan Airport</p>
+                <p>Created: June 19, 2025 • Visualization with AI assistance</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="weather-app.js"></script>
+</body>
+</html>
